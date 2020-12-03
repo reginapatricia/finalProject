@@ -11,9 +11,9 @@ const App = () => {
       <nav>
           <ul>
             <li>
-              <button>
+              
               <Link to="/global">Global</Link>
-              </button>
+             
             </li>
             <li>
               <Link to="/indonesia">Indonesia</Link>
