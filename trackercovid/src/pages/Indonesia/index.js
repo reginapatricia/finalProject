@@ -17,7 +17,7 @@ const Indonesia = () => {
   
     return(
       <div>
-
+        <h1>Indonesia Pages</h1>
       </div>
     )
   }

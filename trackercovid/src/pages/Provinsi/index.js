@@ -10,7 +10,7 @@ const Provinsi = () => {
   
   useEffect(() => {
     axios
-      .get('https://indonesia-covid-19.mathdro.id/api')
+      .get('https://indonesia-covid-19.mathdro.id/api/provinsi')
       .then((response) => setUsers(response.data));
   }, []);
   console.log(users);
@@ -18,7 +18,7 @@ const Provinsi = () => {
   
     return(
       <div>
-
+          <h1>Provinsi Pages</h1>
       </div>
     )
   }
