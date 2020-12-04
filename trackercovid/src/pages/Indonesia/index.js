@@ -4,20 +4,27 @@ import axios from 'axios';
 
 const Indonesia = () => {
 
-    const [users, setUsers]= useState([]);
+    const [cared, setCared]= useState([])
+    const [recovery, setRecovery] = useState ([])
+    const [death, setDeath] = useState([])
   
   
   useEffect(() => {
     axios
-      .get('https://covid19.mathdro.id/api')
-      .then((response) => setUsers(response.data));
+      .get('https://indonesia-covid-19.mathdro.id/api')
+      .then((response) =>      
+      
+      { setCared(response.data.perawatan)
+        setRecovery(response.data.sembuh)
+        setDeath(response.data.meninggal)
+      });
   }, []);
-  console.log(users);
-  
   
     return(
       <div>
-        <h1>Indonesia Pages</h1>
+        <h1 className = "card-container">Cared : {cared}</h1>
+        <h1 className = "card-container"> Recovery : {recovery}</h1>
+        <h1 className = "card-container">Death : {death}</h1>
       </div>
     )
   }
