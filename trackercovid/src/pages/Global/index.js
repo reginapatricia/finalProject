@@ -5,9 +5,9 @@ import NumberFormat from "react-number-format";
 
 const Global = () => {
 
-    const [confirmed, setConfirmed]= useState([])
-    const [recovery, setRecovery] = useState([])
-    const [death, setDeath] = useState([])
+    const [confirmed, setConfirmed]= useState("")
+    const [recovery, setRecovery] = useState("")
+    const [death, setDeath] = useState("")
   
   
   useEffect(() => {
@@ -23,23 +23,25 @@ const Global = () => {
   
     return(
       <>
+      <h2><center> Data Kasus Covid-19 Global </center></h2>
       <div className ="card">
+        <div className ="card-container">
+        <h1>Positif</h1>
+        <h2><NumberFormat value={confirmed}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
 
-      <div className ="card-container">
-      <h1>Positif</h1>
-      <NumberFormat value={setConfirmed.confirmed}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+<div className ="card-container1">
+<h1>Sembuh</h1>
+<h2><NumberFormat value={recovery}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
 
-      </div>
-
-      <div className ="card-container">
-      <h1>Sembuh</h1>
-      <NumberFormat value={setRecovery.recovery}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
-      </div>
-
-      <div className ="card-container">
-      <h1>Meninggal</h1>
-      <NumberFormat value={setDeath.death}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
-      </div>
+<div className ="card-container2">
+<h1>Meninggal</h1>
+<h2><NumberFormat value={death}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
 </div>
 
      </>
@@ -47,7 +49,3 @@ const Global = () => {
   }
   
 export default Global;
-
-
-
-

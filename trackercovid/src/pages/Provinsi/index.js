@@ -1,6 +1,5 @@
 import React, {components, useEffect, useState} from 'react'
 import axios from 'axios';
-import Card from '../../components/Card';
 import NumberFormat from "react-number-format"
 
 
@@ -20,12 +19,13 @@ const Provinsi = () => {
   
     return(
       <>
-      <h2><center>Provinsi Data </center></h2>
+      <h2><center>Data Kasus Covid-19 di Tiap Provinsi </center></h2>
   <center> <table border="2"> 
         <tr>
           <td>Provinsi</td>
           <td>Kasus Positif</td>
           <td>Kasus Sembuh</td>
+          <td>Meninggal</td>
         </tr>
       
           {
@@ -35,8 +35,8 @@ const Provinsi = () => {
                   <td>{item.provinsi}</td>
                   <td><NumberFormat value={item.kasusPosi}  thousandSeparator={true} displayType={'text'}/></td>
                   <td><NumberFormat value={item.kasusSemb}  thousandSeparator={true} displayType={'text'}/></td>
-                </tr>
-                
+                  <td><NumberFormat value={item.kasusMeni}  thousandSeparator={true} displayType={'text'}/></td>
+                </tr> 
               )
             })
           }

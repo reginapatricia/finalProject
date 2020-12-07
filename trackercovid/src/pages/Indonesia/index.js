@@ -4,9 +4,9 @@ import NumberFormat from "react-number-format"
 
 const Indonesia = () => {
 
-    const [cared, setCared]= useState([])
-    const [recovery, setRecovery] = useState ([])
-    const [death, setDeath] = useState([])
+    const [cared, setCared]= useState("")
+    const [recovery, setRecovery] = useState ("")
+    const [death, setDeath] = useState("")
   
   
   useEffect(() => {
@@ -22,12 +22,26 @@ const Indonesia = () => {
   
     return(
       <>
-      <h2><center>Indonesia Data </center></h2>
-      <div className = "card">
-        <h1 className = "card-container"> Jumlah Kasus : {cared}</h1>
-        <h1 className = "card-container"> Sembuh : {recovery}</h1>
-        <h1 className = "card-container">Meninggal : {death}</h1>
-      </div>
+      <h2><center>Data Kasus Covid-19 di Indonesia </center></h2>
+      <div className ="card">
+        <div className ="card-container2">
+        <h1>Jumlah Kasus</h1>
+        <h2><NumberFormat value={cared}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
+
+<div className ="card-container1">
+<h1>Sembuh</h1>
+<h2><NumberFormat value={recovery}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
+
+<div className ="card-container">
+<h1>Meninggal</h1>
+<h2><NumberFormat value={death}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+</h2>
+</div>
+</div>
       </>
     )
   }
