@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import NumberFormat from "react-number-format";
 
 
 const Global = () => {
@@ -21,14 +22,32 @@ const Global = () => {
 
   
     return(
-      <div>
-        <p className ="card-container">confirmed  : {confirmed}</p>
-        <p className = "card-container">recovery  : {recovery}</p>
-        <p className = "card-container">death     : {death}</p>
-     </div>
+      <>
+      <div className ="card">
+
+      <div className ="card-container">
+      <h1>Positif</h1>
+      <NumberFormat value={setConfirmed.confirmed}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+
+      </div>
+
+      <div className ="card-container">
+      <h1>Sembuh</h1>
+      <NumberFormat value={setRecovery.recovery}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+      </div>
+
+      <div className ="card-container">
+      <h1>Meninggal</h1>
+      <NumberFormat value={setDeath.death}  thousandSeparator={true} displayType={'text'} isNumericString={true}></NumberFormat>
+      </div>
+</div>
+
+     </>
     )
   }
   
 export default Global;
+
+
 
 

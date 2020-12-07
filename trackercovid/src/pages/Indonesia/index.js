@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-
+import NumberFormat from "react-number-format"
 
 const Indonesia = () => {
 
@@ -14,18 +14,21 @@ const Indonesia = () => {
       .get('https://indonesia-covid-19.mathdro.id/api')
       .then((response) =>      
       
-      { setCared(response.data.perawatan)
+      { setCared(response.data.jumlahKasus)
         setRecovery(response.data.sembuh)
         setDeath(response.data.meninggal)
       });
   }, []);
   
     return(
-      <div>
-        <h1 className = "card-container">Cared : {cared}</h1>
-        <h1 className = "card-container"> Recovery : {recovery}</h1>
-        <h1 className = "card-container">Death : {death}</h1>
+      <>
+      <h2><center>Indonesia Data </center></h2>
+      <div className = "card">
+        <h1 className = "card-container"> Jumlah Kasus : {cared}</h1>
+        <h1 className = "card-container"> Sembuh : {recovery}</h1>
+        <h1 className = "card-container">Meninggal : {death}</h1>
       </div>
+      </>
     )
   }
   
