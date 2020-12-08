@@ -8,7 +8,9 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h1>Covid-19 Tracker</h1>
+        <center>
+        <h1>COVID-19 TRACKER</h1>
+        </center>
       <nav>
           <ul>
             <li>

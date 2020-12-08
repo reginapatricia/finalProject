@@ -20,7 +20,7 @@ const Provinsi = () => {
     return(
       <>
       <h2><center>Data Kasus Covid-19 di Tiap Provinsi </center></h2>
-  <center> <table border="2"> 
+  <center> <table border="3"> 
         <tr>
           <td>Provinsi</td>
           <td>Kasus Positif</td>
